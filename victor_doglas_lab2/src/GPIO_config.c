@@ -3,11 +3,15 @@
 #include <stdbool.h>
 #include "system_TM4C1294.h" 
 #include "tm4c1294ncpdt_pt2.h"
- uint32_t up;
- uint32_t down;
- uint32_t ctl;
+uint32_t up=0;
+uint32_t down=0;
+uint32_t ctl=0;
 
-#define GPIO_PORTD 	    	        ((volatile uint32_t) 0x00000008)
+void EnableInterrupts(void);
+void DisableInterrupts(void);
+
+#define ONE_SECOND						(((volatile uint32_t )	0x04C4B400))
+#define GPIO_PORTD 	    	                                ((volatile uint32_t) 0x00000008)
 
 void GPIO_Init(void)
 {
@@ -67,6 +71,16 @@ void GPIO_Init(void)
 	GPTMICR_TIMER_1=0x4;            //setando CaEIM
 	GPTMICR_TIMER_2=0x1;
         
+        GPTMTAILR_TIMER_2=20*ONE_SECOND;
+        GPTMICR_TIMER_2=0x1;
+        GPTMIMR_TIMER_2=0x1;
+        
+        NVIC_PRI8=0x40000000; // TIMER 0 
+        NVIC_PRI9=0x40000040; // TIMER 1 E 2
+        
+        NVIC_EN1=0x000000A8; //timer 0,1 e 2
+        
+        EnableInterrupts();
 }
 
 void TIMER_0_A(void)
@@ -78,6 +92,8 @@ void TIMER_1_A(void)
 {GPTMICR_TIMER_1=0x1;
 up=GPTMTAILR_TIMER_1;
 }
+void TIMER_2_A(void)
+{GPTMICR_TIMER_2=0x1;}
 
 void ON_TIMER_0(void)
 {GPTMCTL_TIMER_0|=0x1;}

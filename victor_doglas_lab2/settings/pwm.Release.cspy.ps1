@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "C:\Users\Doglas Querino A\Desktop\Embarcados_Lab1-master\victor_doglas_lab2\settings\pwm.Release.general.xcl" --backend -f "C:\Users\Doglas Querino A\Desktop\Embarcados_Lab1-master\victor_doglas_lab2\settings\pwm.Release.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "C:\Users\Doglas Querino A\Desktop\Embarcados_Lab1-master\LAB2\victor_doglas_lab2\settings\pwm.Release.general.xcl" --backend -f "C:\Users\Doglas Querino A\Desktop\Embarcados_Lab1-master\LAB2\victor_doglas_lab2\settings\pwm.Release.driver.xcl" 
 }
 else
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "C:\Users\Doglas Querino A\Desktop\Embarcados_Lab1-master\victor_doglas_lab2\settings\pwm.Release.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\Doglas Querino A\Desktop\Embarcados_Lab1-master\victor_doglas_lab2\settings\pwm.Release.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "C:\Users\Doglas Querino A\Desktop\Embarcados_Lab1-master\LAB2\victor_doglas_lab2\settings\pwm.Release.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\Doglas Querino A\Desktop\Embarcados_Lab1-master\LAB2\victor_doglas_lab2\settings\pwm.Release.driver.xcl" 
 }

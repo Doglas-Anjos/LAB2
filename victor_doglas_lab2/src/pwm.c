@@ -12,8 +12,9 @@
 #include "utils/uartstdio.h"
 
 #include "system_TM4C1294.h" 
-#include "system_TM4C1294.c" 
-
+extern uint32_t up;
+extern uint32_t down;
+extern uint32_t clt;
 uint32_t Freq_func=120000000;
 uint8_t LED_D1 = 0;
 //uint8_t freq = 0;
@@ -38,12 +39,15 @@ static uint32_t cont = 0;
 static char sfreq[20];
 static char speriodo[20];
 static char sduty_cycle[20];
-
+void GPIO_Init(void);
 void GPIO_Init(void);
 void ON_TIMER_1(void);
 void ON_TIMER_0(void);
 void OFF_TIMER_1(void);
 void OFF_TIMER_0(void);
+void TIMER_0_A(void);
+void TIMER_1_A(void);
+
 // Configuração da UART *********
 
 void UARTInit(void){
@@ -56,14 +60,16 @@ void UARTInit(void){
   while(!SysCtlPeripheralReady(SYSCTL_PERIPH_UART0));
 
   // Configure GPIO Pins for UART mode.
-  GPIOPinConfigure(GPIO_PA0_U0RX);
-  GPIOPinConfigure(GPIO_PA1_U0TX);
+//  GPIOPinConfigure(GPIO_PA0_U0RX);
+//  GPIOPinConfigure(GPIO_PA1_U0TX);
   GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
 
   // Initialize the UART for console I/O.
   UARTStdioConfig(0, 9600, SystemCoreClock);
 } // UARTInit
-
+void UARTStdioIntHandler(void)
+{
+}
 void UART0_Handler(void){
   UARTStdioIntHandler();
 } // UART0_Handler
@@ -85,11 +91,11 @@ void SysTick_Handler(void){
 
  void main(void){
   
-  UARTInit();
-  UARTprintf("Teste\n");
+ // UARTInit();
+ // UARTprintf("Teste\n");
   SysTickPeriodSet(Freq_func); // f = 1Hz para clock = 24MHz
   aux=1;
-  
+  GPIO_Init();
   // Configuração dos LEDs e push-buttons
   
   // ========================== port N=========================================
@@ -133,10 +139,13 @@ void SysTick_Handler(void){
   // }
   
   while(1){
+    ON_TIMER_0();
+    
+    while(ctl!=0)
+    { }
     
     if(GPIOPinRead(GPIO_PORTJ_BASE, GPIO_PIN_0) == 0 && aux==1) // Testa estado o push-button SW2
     { 
-         Start(&down,&up);
          cont=up+down;
          Freq_func=SystemCoreClock;
          pulse_width=(float)up/Freq_func;
@@ -146,12 +155,12 @@ void SysTick_Handler(void){
          freq = ((float)Freq_func/(float)cont);
          duty_cycle = (pulse_width/periodo)*100;
          
-         sprintf(sfreq, "%f\n",freq);
-         UARTprintf("freq = %s\n",sfreq);
-         sprintf(speriodo, "%f\n",periodo);
-         UARTprintf("periodo = %s\n", speriodo);
-         sprintf(sduty_cycle, "%f\n",duty_cycle);
-         UARTprintf("duty_cycle = %s\n\n", sduty_cycle);
+         //sprintf(sfreq, "%f\n",freq);
+         //UARTprintf("freq = %s\n",sfreq);
+         //sprintf(speriodo, "%f\n",periodo);
+         //UARTprintf("periodo = %s\n", speriodo);
+         //sprintf(sduty_cycle, "%f\n",duty_cycle);
+         //UARTprintf("duty_cycle = %s\n\n", sduty_cycle);
          aux=0;
     }
     if(GPIOPinRead(GPIO_PORTJ_BASE, GPIO_PIN_0) == 1 )

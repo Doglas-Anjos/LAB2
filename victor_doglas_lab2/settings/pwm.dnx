@@ -16,7 +16,7 @@
         <LMIFTDIfoundProbes />
     </LMIFTDIDriver>
     <DebugChecksum>
-        <Checksum>1389423528</Checksum>
+        <Checksum>2447066505</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -26,11 +26,36 @@
         <ShowArgs>0</ShowArgs>
     </CallStack>
     <Disassembly>
+        <InstrCount>0</InstrCount>
         <MixedMode>1</MixedMode>
     </Disassembly>
+    <Breakpoints>
+        <Count>0</Count>
+    </Breakpoints>
+    <Trace1>
+        <Enabled>0</Enabled>
+        <ShowSource>1</ShowSource>
+    </Trace1>
     <watch_formats>
         <Fmt0>{W}1:up	3	0</Fmt0>
     </watch_formats>
+    <CodeCoverage>
+        <Enabled>0</Enabled>
+        <ShowSource>0</ShowSource>
+        <HideCovered>0</HideCovered>
+    </CodeCoverage>
+    <DriverProfiling>
+        <Enabled>0</Enabled>
+        <Mode>1</Mode>
+        <Graph>0</Graph>
+        <Symbiont>0</Symbiont>
+    </DriverProfiling>
+    <CallStackLog>
+        <Enabled>0</Enabled>
+    </CallStackLog>
+    <CallStackStripe>
+        <ShowTiming>1</ShowTiming>
+    </CallStackStripe>
     <TermIOLog>
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
@@ -40,19 +65,6 @@
         <LogFile>_ ""</LogFile>
         <Category>_ 0</Category>
     </LogFile>
-    <CallStackLog>
-        <Enabled>0</Enabled>
-    </CallStackLog>
-    <CallStackStripe>
-        <ShowTiming>1</ShowTiming>
-    </CallStackStripe>
-    <Breakpoints>
-        <Count>0</Count>
-    </Breakpoints>
-    <Trace1>
-        <Enabled>0</Enabled>
-        <ShowSource>1</ShowSource>
-    </Trace1>
     <InterruptLog>
         <LogEnabled>0</LogEnabled>
         <GraphEnabled>0</GraphEnabled>
@@ -72,7 +84,12 @@
         <mode>0</mode>
     </DisassembleMode>
     <Breakpoints2>
-        <Count>0</Count>
+        <Bp0>_ 0 "STD_CODE2" "{$PROJ_DIR$\src\pwm.c}.144.1" 0 0 1 "" 0 ""</Bp0>
+        <Bp1>_ 0 "STD_CODE2" "{$PROJ_DIR$\src\startup_TM4C1294.s}.358.1" 0 0 1 "" 0 ""</Bp1>
+        <Bp2>_ 0 "STD_CODE2" "{$PROJ_DIR$\src\startup_TM4C1294.s}.361.1" 0 0 1 "" 0 ""</Bp2>
+        <Bp3>_ 0 "STD_CODE2" "{$PROJ_DIR$\src\startup_TM4C1294.s}.364.1" 0 0 1 "" 0 ""</Bp3>
+        <Bp4>_ 0 "STD_CODE2" "{$PROJ_DIR$\src\pwm.c}.98.1" 0 0 1 "" 0 ""</Bp4>
+        <Count>5</Count>
     </Breakpoints2>
     <Interrupts>
         <Enabled>1</Enabled>

@@ -2370,10 +2370,10 @@
         </settings>
     </configuration>
     <file>
-        <name>$PROJ_DIR$\assembly.s</name>
+        <name>$PROJ_DIR$\driverlib.a</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\driverlib.a</name>
+        <name>$PROJ_DIR$\E_DISE_INTERRUPTS.s</name>
     </file>
     <file>
         <name>$PROJ_DIR$\src\GPIO_config.c</name>
@@ -2392,9 +2392,6 @@
     </file>
     <file>
         <name>$PROJ_DIR$\src\TM4C1294NCPDT.h</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\src\tm4c1294ncpdt_pt2.h</name>
     </file>
     <file>
         <name>$PROJ_DIR$\src\uartstdio.c</name>

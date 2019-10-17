@@ -1,10 +1,16 @@
 "--endian=little" 
 
-"--cpu=Cortex-M3" 
+"--cpu=Cortex-M4" 
 
 "--fpu=None" 
 
+"-p" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\arm\CONFIG\debugger\TexasInstruments\TM4C1294NCPDT.ddf" 
+
 "--semihosting=none" 
+
+"--device=TM4C1294NCPDT" 
 
 "--multicore_nr_of_cores=1" 
 

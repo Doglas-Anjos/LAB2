@@ -48,6 +48,9 @@
 
                 EXTERN  __iar_program_start
                 EXTERN  SystemInit
+                EXTERN  TIMER_0_A
+                EXTERN  TIMER_1_A
+                EXTERN  TIMER_2_A
                 PUBLIC  __vector_table
                 PUBLIC  __vector_table_0x1c
                 PUBLIC  __Vectors
@@ -332,7 +335,6 @@ SVC_Handler
 DebugMon_Handler
 PendSV_Handler
 SysTick_Handler
-
 GPIOA_Handler
 GPIOB_Handler
 GPIOC_Handler
@@ -353,10 +355,13 @@ ADC0SS2_Handler
 ADC0SS3_Handler
 WDT0_Handler
 TIMER0A_Handler
+  B TIMER_0_A
 TIMER0B_Handler
 TIMER1A_Handler
+  B TIMER_1_A
 TIMER1B_Handler
 TIMER2A_Handler
+  B TIMER_2_A
 TIMER2B_Handler
 COMP0_Handler
 COMP1_Handler
