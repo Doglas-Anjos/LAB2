@@ -12,11 +12,11 @@
         <ByteLimit>50</ByteLimit>
     </Stack>
     <LMIFTDIDriver>
-        <LMIFTDIserialNo>0F00A5CA</LMIFTDIserialNo>
+        <LMIFTDIserialNo>0F00A669</LMIFTDIserialNo>
         <LMIFTDIfoundProbes />
     </LMIFTDIDriver>
     <DebugChecksum>
-        <Checksum>2447066505</Checksum>
+        <Checksum>3894225013</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -29,16 +29,10 @@
         <InstrCount>0</InstrCount>
         <MixedMode>1</MixedMode>
     </Disassembly>
-    <Breakpoints>
-        <Count>0</Count>
-    </Breakpoints>
     <Trace1>
         <Enabled>0</Enabled>
         <ShowSource>1</ShowSource>
     </Trace1>
-    <watch_formats>
-        <Fmt0>{W}1:up	3	0</Fmt0>
-    </watch_formats>
     <CodeCoverage>
         <Enabled>0</Enabled>
         <ShowSource>0</ShowSource>
@@ -50,21 +44,6 @@
         <Graph>0</Graph>
         <Symbiont>0</Symbiont>
     </DriverProfiling>
-    <CallStackLog>
-        <Enabled>0</Enabled>
-    </CallStackLog>
-    <CallStackStripe>
-        <ShowTiming>1</ShowTiming>
-    </CallStackStripe>
-    <TermIOLog>
-        <LoggingEnabled>_ 0</LoggingEnabled>
-        <LogFile>_ ""</LogFile>
-    </TermIOLog>
-    <LogFile>
-        <LoggingEnabled>_ 0</LoggingEnabled>
-        <LogFile>_ ""</LogFile>
-        <Category>_ 0</Category>
-    </LogFile>
     <InterruptLog>
         <LogEnabled>0</LogEnabled>
         <GraphEnabled>0</GraphEnabled>
@@ -80,16 +59,8 @@
         <SumEnabled>0</SumEnabled>
         <ShowTimeSum>1</ShowTimeSum>
     </DataLog>
-    <DisassembleMode>
-        <mode>0</mode>
-    </DisassembleMode>
     <Breakpoints2>
-        <Bp0>_ 0 "STD_CODE2" "{$PROJ_DIR$\src\pwm.c}.144.1" 0 0 1 "" 0 ""</Bp0>
-        <Bp1>_ 0 "STD_CODE2" "{$PROJ_DIR$\src\startup_TM4C1294.s}.358.1" 0 0 1 "" 0 ""</Bp1>
-        <Bp2>_ 0 "STD_CODE2" "{$PROJ_DIR$\src\startup_TM4C1294.s}.361.1" 0 0 1 "" 0 ""</Bp2>
-        <Bp3>_ 0 "STD_CODE2" "{$PROJ_DIR$\src\startup_TM4C1294.s}.364.1" 0 0 1 "" 0 ""</Bp3>
-        <Bp4>_ 0 "STD_CODE2" "{$PROJ_DIR$\src\pwm.c}.98.1" 0 0 1 "" 0 ""</Bp4>
-        <Count>5</Count>
+        <Count>0</Count>
     </Breakpoints2>
     <Interrupts>
         <Enabled>1</Enabled>
@@ -101,13 +72,42 @@
         <TypeViol>0</TypeViol>
         <Stop>1</Stop>
     </MemConfig>
-    <Aliases>
-        <Count>0</Count>
-        <SuppressDialog>0</SuppressDialog>
-    </Aliases>
     <Simulator>
         <Freq>10000000</Freq>
         <FreqHi>0</FreqHi>
         <MultiCoreRunAll>1</MultiCoreRunAll>
     </Simulator>
+    <watch_formats>
+        <Fmt0>{W}1:up	3	0</Fmt0>
+    </watch_formats>
+    <DisassembleMode>
+        <mode>0</mode>
+    </DisassembleMode>
+    <Breakpoints>
+        <Bp0>_ "STD_CODE" "{$PROJ_DIR$\src\GPIO_config.c}.97.2" 1 0 0 0 "" 0 ""</Bp0>
+        <Bp1>_ "STD_CODE" "{$PROJ_DIR$\src\pwm.c}.144.5" 1 0 0 0 "" 0 ""</Bp1>
+        <Bp2>_ "STD_CODE" "0x00000E4E" 0 0 0 0 "" 0 ""</Bp2>
+        <Bp3>_ "STD_CODE" "{$PROJ_DIR$\src\GPIO_config.c}.102.2" 1 0 0 0 "" 0 ""</Bp3>
+        <Bp4>_ "STD_CODE" "{$PROJ_DIR$\src\GPIO_config.c}.102.2" 1 0 0 0 "" 0 ""</Bp4>
+        <Count>5</Count>
+    </Breakpoints>
+    <TermIOLog>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+    </TermIOLog>
+    <LogFile>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+        <Category>_ 0</Category>
+    </LogFile>
+    <Aliases>
+        <Count>0</Count>
+        <SuppressDialog>0</SuppressDialog>
+    </Aliases>
+    <CallStackLog>
+        <Enabled>0</Enabled>
+    </CallStackLog>
+    <CallStackStripe>
+        <ShowTiming>1</ShowTiming>
+    </CallStackStripe>
 </settings>

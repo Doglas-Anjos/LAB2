@@ -10,8 +10,8 @@
 #include "driverlib/systick.h"
 #include "driverlib/pin_map.h"
 #include "utils/uartstdio.h"
-
 #include "system_TM4C1294.h" 
+
 extern uint32_t up;
 extern uint32_t down;
 extern uint32_t clt;
@@ -24,8 +24,6 @@ uint8_t LED_D1 = 0;
 //uint8_t aux = 0;
 //uint16_t cont = 0;
 
-extern void UARTStdioIntHandler(void);
-void Start(uint32_t *R0,uint32_t *R1);
 static uint32_t ctl=0;
 static uint32_t up=0;
 static uint32_t down=0;
@@ -60,16 +58,14 @@ void UARTInit(void){
   while(!SysCtlPeripheralReady(SYSCTL_PERIPH_UART0));
 
   // Configure GPIO Pins for UART mode.
-//  GPIOPinConfigure(GPIO_PA0_U0RX);
-//  GPIOPinConfigure(GPIO_PA1_U0TX);
+  GPIOPinConfigure(GPIO_PA0_U0RX);
+  GPIOPinConfigure(GPIO_PA1_U0TX);
   GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
 
   // Initialize the UART for console I/O.
   UARTStdioConfig(0, 9600, SystemCoreClock);
 } // UARTInit
-void UARTStdioIntHandler(void)
-{
-}
+
 void UART0_Handler(void){
   UARTStdioIntHandler();
 } // UART0_Handler
@@ -89,10 +85,11 @@ void SysTick_Handler(void){
 //  GPIOPinWrite(GPIO_PORTN_BASE, GPIO_PIN_1, LED_D1); // Acende ou apaga LED D1
 //} // SysTick_Handler
 
- void main(void){
+ void main(void)
+ {
   
- // UARTInit();
- // UARTprintf("Teste\n");
+  UARTInit();
+  UARTprintf("Teste\n");
   SysTickPeriodSet(Freq_func); // f = 1Hz para clock = 24MHz
   aux=1;
   GPIO_Init();
@@ -140,9 +137,9 @@ void SysTick_Handler(void){
   
   while(1){
     ON_TIMER_0();
-    
-    while(ctl!=0)
-    { }
+    ON_TIMER_1();
+    while(ctl==0)
+    {cont++;}
     
     if(GPIOPinRead(GPIO_PORTJ_BASE, GPIO_PIN_0) == 0 && aux==1) // Testa estado o push-button SW2
     { 

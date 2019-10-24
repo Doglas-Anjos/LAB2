@@ -1134,7 +1134,7 @@
                 </option>
                 <option>
                     <name>GenLowLevelInterface</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>GEndianModeBE</name>
@@ -1272,7 +1272,8 @@
                 <debug>0</debug>
                 <option>
                     <name>CCDefines</name>
-                    <state>NDEBUG</state>
+                    <state>PART_TM4C1294NCPDT</state>
+                    <state>UART_BUFFERED</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -1333,11 +1334,11 @@
                 <option>
                     <name>CCAllowList</name>
                     <version>1</version>
-                    <state>11111110</state>
+                    <state>00000000</state>
                 </option>
                 <option>
                     <name>CCDebugInfo</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IEndianMode</name>
@@ -1413,7 +1414,7 @@
                 </option>
                 <option>
                     <name>CCOptLevel</name>
-                    <state>3</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>CCOptStrategy</name>
@@ -1422,7 +1423,7 @@
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
-                    <state>3</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>CompilerMisraRules98</name>
@@ -1567,7 +1568,7 @@
                 </option>
                 <option>
                     <name>ADebug</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>AltRegisterNames</name>
@@ -1701,7 +1702,7 @@
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state></state>
+                    <state>pwm.srec</state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -2120,13 +2121,7 @@
         <name>$PROJ_DIR$\src\startup_TM4C1294.s</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\src\system_TM4C1294.h</name>
-    </file>
-    <file>
         <name>$PROJ_DIR$\src\system_TM4C1294_TW.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\src\TM4C1294NCPDT.h</name>
     </file>
     <file>
         <name>$PROJ_DIR$\src\uartstdio.c</name>

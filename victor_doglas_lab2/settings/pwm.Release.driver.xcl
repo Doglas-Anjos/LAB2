@@ -8,11 +8,11 @@
 
 "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\arm\CONFIG\debugger\TexasInstruments\TM4C1294NCPDT.ddf" 
 
-"--semihosting=none" 
+"--semihosting" 
 
 "--device=TM4C1294NCPDT" 
 
-"--multicore_nr_of_cores=1" 
+"--drv_interface_speed=500" 
 
 
 
